@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简历工作照生成系统</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Resume Headshot Studio</p>
+        <h1>简历工作照生成系统</h1>
+        <p class="hero-text">
+          上传正面人像照片，选择职业风格，快速生成适合简历、招聘平台和个人主页的工作照，并支持保存下载。
+        </p>
+      </div>
+      <div class="hero-card">
+        <div class="metric">
+          <span class="metric-label">输出比例</span>
+          <strong>4:5 工作照</strong>
+        </div>
+        <div class="metric">
+          <span class="metric-label">功能流程</span>
+          <strong>上传 / 生成 / 下载</strong>
+        </div>
+        <div class="metric">
+          <span class="metric-label">生成模式</span>
+          <strong>本地智能修图</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="panel controls-panel">
+        <div class="panel-header">
+          <h2>参数设置</h2>
+          <p>建议使用清晰、正面、无遮挡的人像照片。</p>
+        </div>
+
+        <label class="upload-box" for="imageInput">
+          <input id="imageInput" type="file" accept="image/*">
+          <span class="upload-title">上传正面照</span>
+          <span class="upload-hint">支持 JPG / PNG，建议 1000px 以上</span>
+        </label>
+
+        <div class="field">
+          <label for="styleSelect">职业照风格</label>
+          <select id="styleSelect">
+            <option value="executiveBlue">商务蓝</option>
+            <option value="lightGray">极简灰</option>
+            <option value="charcoalPro">深色高管</option>
+            <option value="freshOffice">清新白领</option>
+          </select>
+        </div>
+
+        <div class="grid-two">
+          <div class="field">
+            <label for="zoomRange">头像缩放</label>
+            <input id="zoomRange" type="range" min="0.8" max="2.4" step="0.01" value="1.2">
+          </div>
+          <div class="field">
+            <label for="liftRange">人物上移</label>
+            <input id="liftRange" type="range" min="-220" max="220" step="1" value="0">
+          </div>
+        </div>
+
+        <div class="grid-two">
+          <div class="field">
+            <label for="warmthRange">肤色暖度</label>
+            <input id="warmthRange" type="range" min="-20" max="25" step="1" value="8">
+          </div>
+          <div class="field">
+            <label for="clarityRange">清晰增强</label>
+            <input id="clarityRange" type="range" min="0" max="35" step="1" value="14">
+          </div>
+        </div>
+
+        <div class="toggle-list">
+          <label class="toggle">
+            <input id="beautyToggle" type="checkbox" checked>
+            <span>开启柔肤与职业调色</span>
+          </label>
+          <label class="toggle">
+            <input id="formalWearToggle" type="checkbox" checked>
+            <span>叠加职业装轮廓</span>
+          </label>
+          <label class="toggle">
+            <input id="bgSoftLightToggle" type="checkbox" checked>
+            <span>开启背景柔光</span>
+          </label>
+        </div>
+
+        <div class="action-row">
+          <button id="generateBtn" class="primary-btn" type="button">生成工作照</button>
+          <button id="saveBtn" class="secondary-btn" type="button" disabled>保存到本地记录</button>
+          <button id="downloadBtn" class="secondary-btn" type="button" disabled>下载 PNG</button>
+        </div>
+
+        <div id="statusMessage" class="status">等待上传图片。</div>
+      </section>
+
+      <section class="panel preview-panel">
+        <div class="panel-header">
+          <h2>实时预览</h2>
+          <p>调整参数后生成工作照，可保存记录或直接下载。</p>
+        </div>
+
+        <div class="preview-stage">
+          <canvas id="resultCanvas" width="1024" height="1280" aria-label="工作照预览"></canvas>
+          <div id="emptyState" class="empty-state">
+            <strong>尚未上传照片</strong>
+            <span>上传正面照后开始生成</span>
+          </div>
+        </div>
+
+        <div class="style-notes" id="styleNotes"></div>
+
+        <div class="history-box">
+          <div class="history-header">
+            <h3>本地保存记录</h3>
+            <button id="clearHistoryBtn" class="ghost-btn" type="button">清空记录</button>
+          </div>
+          <div id="historyList" class="history-list"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

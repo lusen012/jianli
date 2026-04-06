@@ -1,0 +1,26 @@
+2026-04-06 09:31:09.423: [INFO] VisibilityChanged: 0
+2026-04-06 09:31:09.467: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:09.468: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:09.470: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:09.473: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:09.474: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:09.475: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:09.477: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:09.478: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:09.480: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:09.482: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:09.485: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:09.487: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:09.504: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-04-06 09:31:09.504: [INFO] OnDoneLoading sync enabled: 0
+2026-04-06 09:31:09.572: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:10.050: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:10.054: [INFO] Primary account changed.
+2026-04-06 09:31:10.054: [INFO] OnPrimaryAccountChanged PrimaryAccountChangeEvent::Type::kSet
+2026-04-06 09:31:10.059: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:10.061: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-04-06 09:31:10.620: [INFO] BookmarkNodeAdded, ABU: 0
+2026-04-06 09:31:10.621: [INFO] BookmarkNodeAdded, ABU: 0
+2026-04-06 09:31:10.621: [INFO] BookmarkNodeAdded, ABU: 0
+2026-04-06 09:32:00.463: [INFO] VisibilityChanged: 1
+2026-04-06 09:32:08.070: [INFO] VisibilityChanged: 0

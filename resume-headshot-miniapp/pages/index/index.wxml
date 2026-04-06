@@ -1,0 +1,56 @@
+<view class="page">
+  <view class="hero">
+    <view class="eyebrow">Resume Headshot</view>
+    <view class="title">简历工作照生成小程序</view>
+    <view class="subtitle">上传正面人像，选择风格，生成并保存职业工作照。</view>
+  </view>
+
+  <view class="panel">
+    <button class="upload-btn" bindtap="chooseImage">上传正面照</button>
+
+    <view class="field">
+      <view class="label">职业照风格</view>
+      <picker mode="selector" range="{{styleNames}}" value="{{styleIndex}}" bindchange="onStyleChange">
+        <view class="picker">{{styleNames[styleIndex]}}</view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <view class="label">头像缩放 {{zoom}}</view>
+      <slider min="80" max="240" step="1" value="{{zoomValue}}" bindchanging="onZoomChange" activeColor="#174ea6" />
+    </view>
+
+    <view class="field">
+      <view class="label">人物上移 {{lift}}</view>
+      <slider min="-220" max="220" step="1" value="{{liftValue}}" bindchanging="onLiftChange" activeColor="#174ea6" />
+    </view>
+
+    <view class="switch-row">
+      <text>柔肤调色</text>
+      <switch checked="{{beauty}}" bindchange="onBeautyChange" color="#174ea6" />
+    </view>
+    <view class="switch-row">
+      <text>职业装轮廓</text>
+      <switch checked="{{formalWear}}" bindchange="onFormalWearChange" color="#174ea6" />
+    </view>
+
+    <view class="action-row">
+      <button class="primary" bindtap="generateImage">生成工作照</button>
+      <button class="secondary" bindtap="saveImage" disabled="{{!generatedTempPath}}">保存到相册</button>
+    </view>
+
+    <view class="status">{{statusText}}</view>
+  </view>
+
+  <view class="panel">
+    <view class="section-title">预览</view>
+    <view class="preview-wrap">
+      <canvas type="2d" id="resultCanvas" class="canvas"></canvas>
+      <view wx:if="{{!imagePath}}" class="empty-state">
+        <view class="empty-title">尚未上传照片</view>
+        <view class="empty-text">上传正面照后开始生成</view>
+      </view>
+    </view>
+    <view class="style-note">{{styleNote}}</view>
+  </view>
+</view>
