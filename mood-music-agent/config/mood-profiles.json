@@ -1,0 +1,32 @@
+{
+  "happy": {
+    "style": "bright, light, celebrate together",
+    "microAdvice": "Keep this good momentum for 10 more minutes with one tiny thing you enjoy.",
+    "replyPrefix": "You sound in a really good state.",
+    "theme": { "primary": "#ff8a3d", "secondary": "#ffd166", "bg1": "#fff3e6", "bg2": "#ffe0b2" }
+  },
+  "sad": {
+    "style": "gentle, accepting, low stimulation",
+    "microAdvice": "Start with your breath. No need to force yourself to bounce back now.",
+    "replyPrefix": "I hear that this feels heavy for you.",
+    "theme": { "primary": "#5e81ac", "secondary": "#88c0d0", "bg1": "#e7ecf5", "bg2": "#d8e2f0" }
+  },
+  "anxious": {
+    "style": "steady pace, reduce catastrophizing",
+    "microAdvice": "Anchor to this moment and do one small, certain action first.",
+    "replyPrefix": "Anxiety can feel exhausting.",
+    "theme": { "primary": "#d97706", "secondary": "#f59e0b", "bg1": "#fff7e6", "bg2": "#ffe9bf" }
+  },
+  "calm": {
+    "style": "stable, friendly, natural",
+    "microAdvice": "This rhythm works well. Keep it.",
+    "replyPrefix": "You seem centered right now.",
+    "theme": { "primary": "#2a9d8f", "secondary": "#8ecae6", "bg1": "#e6f7f4", "bg2": "#d6f0eb" }
+  },
+  "angry": {
+    "style": "validate feelings without escalation",
+    "microAdvice": "Let your body slow down first, then decide how to respond.",
+    "replyPrefix": "That anger carries real weight.",
+    "theme": { "primary": "#e63946", "secondary": "#ff6b6b", "bg1": "#ffe8ea", "bg2": "#ffd6db" }
+  }
+}

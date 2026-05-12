@@ -1,0 +1,62 @@
+{
+  "local": [
+    {
+      "id": "l1",
+      "title": "Warm Morning",
+      "artist": "Local Artist A",
+      "url": "/music/warm-morning.mp3",
+      "cover": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800",
+      "moods": ["happy", "calm"]
+    },
+    {
+      "id": "l2",
+      "title": "Slow Breath",
+      "artist": "Local Artist B",
+      "url": "/music/slow-breath.mp3",
+      "cover": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800",
+      "moods": ["anxious", "sad", "calm"]
+    },
+    {
+      "id": "l3",
+      "title": "Night Window",
+      "artist": "Local Artist C",
+      "url": "/music/night-window.mp3",
+      "cover": "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800",
+      "moods": ["sad", "angry"]
+    }
+  ],
+  "online": [
+    {
+      "id": "o1",
+      "title": "A New Beginning",
+      "artist": "Bensound",
+      "url": "https://www.bensound.com/bensound-music/bensound-sunny.mp3",
+      "cover": "https://images.unsplash.com/photo-1460036521480-ff49c08c2781?w=800",
+      "moods": ["happy"]
+    },
+    {
+      "id": "o2",
+      "title": "Slow Motion",
+      "artist": "Bensound",
+      "url": "https://www.bensound.com/bensound-music/bensound-slowmotion.mp3",
+      "cover": "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800",
+      "moods": ["sad", "anxious", "calm"]
+    },
+    {
+      "id": "o3",
+      "title": "Tenderness",
+      "artist": "Bensound",
+      "url": "https://www.bensound.com/bensound-music/bensound-tenderness.mp3",
+      "cover": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800",
+      "moods": ["sad", "calm"]
+    },
+    {
+      "id": "o4",
+      "title": "Energy",
+      "artist": "Bensound",
+      "url": "https://www.bensound.com/bensound-music/bensound-energy.mp3",
+      "cover": "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800",
+      "moods": ["angry", "happy"]
+    }
+  ]
+}
