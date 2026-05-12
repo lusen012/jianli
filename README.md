@@ -1,17 +1,18 @@
 # jianli
 
-一个以 3D 玻璃拟态和霓虹视觉语言为核心的个人简历生成项目。
+一个以 3D 玻璃拟态、霓虹渐变和沉浸式信息层次为核心风格的个人简历生成项目。
 
-## 在线访问
+## 在线预览
 
-- GitHub Pages 站点：`https://lusen012.github.io/jianli/`
+- GitHub Pages：<https://lusen012.github.io/jianli/>
+- GitHub 仓库：<https://github.com/lusen012/jianli>
 
-如果刚推送完工作流，Pages 可能需要 1-3 分钟完成首次部署。
+如果刚完成推送，Pages 可能需要 1 到 3 分钟完成同步。
 
 ## 项目结构
 
 - `resume-headshot-studio/`
-  - 本地开发与预览使用的主项目目录
+  - 主项目目录，包含页面、样式、交互逻辑和本地预览脚本
 - `docs/`
   - GitHub Pages 发布目录
 - `.github/workflows/deploy-pages.yml`
@@ -31,7 +32,7 @@ cd E:\codex\resume-headshot-studio
 powershell -ExecutionPolicy Bypass -File .\start-preview.ps1
 ```
 
-或直接双击：
+或双击：
 
 ```text
 start-preview.cmd
@@ -43,8 +44,8 @@ start-preview.cmd
 http://127.0.0.1:4173/
 ```
 
-## 说明
+## 相关说明
 
-仓库根目录主要承担发布与展示职责，前端主代码位于：
+更完整的产品说明见：
 
 - [resume-headshot-studio/README.md](./resume-headshot-studio/README.md)
