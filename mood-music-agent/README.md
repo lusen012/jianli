@@ -2,28 +2,19 @@
 
 A runnable mood-chat + music-playback AI agent.
 
-## Features
-- Text + voice mood chat (Web Speech API)
-- OpenAI-based response generation (rule-based fallback)
-- Music queue strategy:
-  - local files first (`/music/*.mp3`)
-  - configured online tracks second (`config/music-library.json`)
-  - dynamic online search fallback via iTunes Search API
-- Immersive mood-themed UI + player controls
+## Local run
+1. copy `server/.env.example` -> `server/.env`
+2. set `OPENAI_API_KEY`
+3. run `npm run dev`
+4. open `http://localhost:5173`
 
-## Run
-1. Configure API key:
-   - copy `server/.env.example` -> `server/.env`
-   - set `OPENAI_API_KEY=...`
-2. Install dependencies (already done in this workspace):
-   - root: `npm install`
-   - client/server: already installed
-3. Start app:
-   - `npm run dev`
-4. Open:
-   - `http://localhost:5173`
+## Cloud deploy (Render)
+1. Push branch to GitHub (done).
+2. In Render, create a **Blueprint** deployment from this repo.
+3. Render will read `render.yaml` and create service `mood-music-agent`.
+4. Set `OPENAI_API_KEY` in Render env vars.
+5. After deploy, open Render URL directly.
 
 ## Notes
-- If `music/` has no mp3 files, the app still works using online tracks.
-- Backend health check: `http://localhost:8787/api/health`
-- Debug music queue: `http://localhost:8787/api/debug/music-root`
+- Local music files are optional.
+- If no local mp3 exists, app auto-falls back to online music + iTunes previews.

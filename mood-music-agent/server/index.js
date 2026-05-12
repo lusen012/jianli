@@ -2,14 +2,16 @@
 const express = require('express');
 const cors = require('cors');
 const { randomUUID } = require('crypto');
+const path = require('path');
+const fs = require('fs');
 const { analyzeMood, generateReply, createOpenAIClient } = require('./moodAgent');
 const { pickTracksByMood } = require('./musicEngine');
-const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 8787;
 const sessionQueues = new Map();
 const openaiClient = createOpenAIClient(process.env.OPENAI_API_KEY);
+const clientDist = path.resolve(__dirname, '..', 'client', 'dist');
 
 app.use(cors());
 app.use(express.json({ limit: '1mb' }));
@@ -56,6 +58,14 @@ app.get('/api/music/next', (req, res) => {
   sessionQueues.set(sessionId, session);
   res.json({ track: session.queue[session.index] });
 });
+
+if (fs.existsSync(clientDist)) {
+  app.use(express.static(clientDist));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api/')) return next();
+    res.sendFile(path.join(clientDist, 'index.html'));
+  });
+}
 
 app.listen(port, () => {
   console.log(`Mood Agent server running at http://localhost:${port}`);

@@ -1,0 +1,12 @@
+﻿services:
+  - type: web
+    name: mood-music-agent
+    runtime: node
+    rootDir: mood-music-agent
+    buildCommand: npm install && npm --prefix client install && npm --prefix server install && npm --prefix client run build
+    startCommand: npm --prefix server run start
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: LOCAL_MUSIC_DIR
+        value: ../music
