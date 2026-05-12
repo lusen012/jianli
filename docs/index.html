@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全息简历实验室 | 个人简历生成器</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="ambient ambient-cyan"></div>
+  <div class="ambient ambient-pink"></div>
+  <div class="ambient ambient-violet"></div>
+  <div class="grid-noise"></div>
+
+  <div class="app-shell">
+    <nav class="topbar glass-panel ghost-border">
+      <div class="brand-lockup">
+        <span class="brand-mark"></span>
+        <div>
+          <p class="brand-kicker">全息策展式体验</p>
+          <strong>Holo Resume Lab</strong>
+        </div>
+      </div>
+      <div class="topbar-links">
+        <a href="#builder">生成器</a>
+        <a href="#preview">预览</a>
+        <a href="#history">历史版本</a>
+      </div>
+      <button id="loadSampleBtn" class="pill-button primary-button" type="button">加载示例</button>
+    </nav>
+
+    <header class="hero">
+      <section class="hero-copy glass-panel ghost-border">
+        <p class="eyebrow">简历生成器 / 高级 3D 玻璃拟态界面</p>
+        <h1>把你的简历变成一份有空间感、品牌感和作品感的表达载体。</h1>
+        <p class="hero-text">
+          参考你提供的 Stitch 设计风格，这个应用把深空背景、霓虹渐变、玻璃卡片和悬浮层次语言，
+          转化成适合求职、个人品牌展示与作品集叙事的简历生成体验。
+        </p>
+        <div class="hero-actions">
+          <button id="jumpBuilderBtn" class="pill-button primary-button" type="button">开始生成</button>
+          <button id="exportMarkdownBtnTop" class="pill-button secondary-button" type="button">导出 Markdown</button>
+        </div>
+        <div class="hero-metrics">
+          <article class="metric-card">
+            <span>设计气质</span>
+            <strong>玻璃 / 霓虹 / 立体层次</strong>
+          </article>
+          <article class="metric-card">
+            <span>应用结构</span>
+            <strong>表单 / 预览 / 版本管理</strong>
+          </article>
+          <article class="metric-card">
+            <span>适用场景</span>
+            <strong>求职 / 作品集 / 个人品牌</strong>
+          </article>
+        </div>
+      </section>
+
+      <aside class="hero-stack">
+        <article class="floating-card glass-panel ghost-border tilt-card">
+          <div class="floating-label">模板模式</div>
+          <h2>Dimension Glass</h2>
+          <p>信息不是堆砌，而是在景深、光感与层次中被看见。</p>
+        </article>
+        <article class="signal-card glass-panel ghost-border">
+          <span>状态信号</span>
+          <strong>简历完成度投射</strong>
+          <div class="signal-meter">
+            <div class="signal-meter-bar"></div>
+          </div>
+        </article>
+      </aside>
+    </header>
+
+    <main id="builder" class="workspace">
+      <section class="control-column">
+        <div class="panel glass-panel ghost-border">
+          <div class="panel-head">
+            <div>
+              <p class="panel-kicker">核心档案</p>
+              <h2>基础信息</h2>
+            </div>
+            <span class="panel-badge">实时</span>
+          </div>
+
+          <div class="field-grid">
+            <label class="field field-wide">
+              <span>姓名</span>
+              <input id="nameInput" type="text" placeholder="例如：林知远">
+            </label>
+            <label class="field">
+              <span>目标职位</span>
+              <input id="roleInput" type="text" placeholder="高级产品经理">
+            </label>
+            <label class="field">
+              <span>城市</span>
+              <input id="locationInput" type="text" placeholder="上海 / 远程">
+            </label>
+            <label class="field">
+              <span>邮箱</span>
+              <input id="emailInput" type="email" placeholder="name@email.com">
+            </label>
+            <label class="field">
+              <span>电话</span>
+              <input id="phoneInput" type="text" placeholder="+86 138 0000 0000">
+            </label>
+            <label class="field field-wide">
+              <span>个人链接</span>
+              <input id="websiteInput" type="text" placeholder="portfolio.site / github.com/name">
+            </label>
+            <label class="field field-wide">
+              <span>个人简介</span>
+              <textarea id="summaryInput" rows="4" placeholder="用 2-3 句话概括你的优势、方向和代表性成果。"></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div class="panel glass-panel ghost-border">
+          <div class="panel-head">
+            <div>
+              <p class="panel-kicker">内容叙事区块</p>
+              <h2>简历内容</h2>
+            </div>
+          </div>
+
+          <label class="field">
+            <span>核心亮点</span>
+            <textarea id="highlightsInput" rows="4" placeholder="每行一个亮点，例如：主导 0-1 搭建 B 端平台，服务 200+ 企业客户"></textarea>
+          </label>
+          <label class="field">
+            <span>技能矩阵</span>
+            <textarea id="skillsInput" rows="4" placeholder="每行一个技能，例如：产品策略 / 用户研究 / AIGC 工作流 / Figma"></textarea>
+          </label>
+          <label class="field">
+            <span>工作经历</span>
+            <textarea id="experienceInput" rows="8" placeholder="每段经历用空行分隔。首行：公司 | 职位 | 时间。后续每行填写成果。"></textarea>
+          </label>
+          <label class="field">
+            <span>项目经历</span>
+            <textarea id="projectsInput" rows="7" placeholder="每段项目用空行分隔。首行：项目 | 角色。后续每行填写目标、方案或结果。"></textarea>
+          </label>
+          <label class="field">
+            <span>教育经历</span>
+            <textarea id="educationInput" rows="4" placeholder="例如：同济大学 | 工业设计 | 硕士 | 2017 - 2020"></textarea>
+          </label>
+        </div>
+
+        <div class="panel glass-panel ghost-border">
+          <div class="panel-head">
+            <div>
+              <p class="panel-kicker">模板控制</p>
+              <h2>风格设置</h2>
+            </div>
+          </div>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>主题</span>
+              <select id="themeSelect">
+                <option value="dimension">Dimension Glass</option>
+                <option value="pulse">Neon Pulse</option>
+                <option value="aurora">Aurora Grid</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>内容密度</span>
+              <select id="densitySelect">
+                <option value="balanced">均衡</option>
+                <option value="compact">紧凑</option>
+                <option value="showcase">展示型</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="toggle-list">
+            <label class="toggle-row">
+              <input id="photoToggle" type="checkbox" checked>
+              <span>显示头像占位区</span>
+            </label>
+            <label class="toggle-row">
+              <input id="metricsToggle" type="checkbox" checked>
+              <span>显示成就指标卡</span>
+            </label>
+            <label class="toggle-row">
+              <input id="accentToggle" type="checkbox" checked>
+              <span>启用霓虹漂浮装饰</span>
+            </label>
+          </div>
+
+          <div class="action-grid">
+            <button id="saveVersionBtn" class="pill-button primary-button" type="button">保存版本</button>
+            <button id="copySummaryBtn" class="pill-button secondary-button" type="button">复制摘要</button>
+            <button id="exportMarkdownBtn" class="pill-button secondary-button" type="button">导出 Markdown</button>
+          </div>
+
+          <div id="statusMessage" class="status-box">已准备就绪。填写左侧内容后，右侧简历会实时更新。</div>
+        </div>
+      </section>
+
+      <section id="preview" class="preview-column">
+        <div class="preview-shell glass-panel ghost-border">
+          <div class="preview-head">
+            <div>
+              <p class="panel-kicker">实时预览</p>
+              <h2>简历成品</h2>
+            </div>
+            <div class="preview-actions">
+              <span id="themeBadge" class="panel-badge">Dimension Glass</span>
+            </div>
+          </div>
+
+          <article id="resumeCard" class="resume-card theme-dimension density-balanced accent-on">
+            <div class="resume-orb orb-a"></div>
+            <div class="resume-orb orb-b"></div>
+            <div class="resume-orb orb-c"></div>
+
+            <header class="resume-hero">
+              <div class="resume-identity">
+                <p id="previewEyebrow" class="resume-kicker">产品策略 / 体验设计 / AI 工作流</p>
+                <h1 id="previewName">林知远</h1>
+                <h2 id="previewRole">高级产品经理</h2>
+                <p id="previewSummary" class="resume-summary"></p>
+              </div>
+              <div class="resume-side">
+                <div id="previewPhoto" class="avatar-panel">
+                  <div class="avatar-core">LZ</div>
+                </div>
+                <ul class="contact-list">
+                  <li id="previewLocation">上海 / 远程</li>
+                  <li id="previewEmail">name@email.com</li>
+                  <li id="previewPhone">+86 138 0000 0000</li>
+                  <li id="previewWebsite">portfolio.site</li>
+                </ul>
+              </div>
+            </header>
+
+            <section id="previewMetrics" class="resume-metrics">
+              <article class="metric-tile">
+                <span>职业标签</span>
+                <strong id="metricRole">高级产品经理</strong>
+              </article>
+              <article class="metric-tile">
+                <span>核心优势</span>
+                <strong id="metricStrength">策略 x 体验 x 增长</strong>
+              </article>
+              <article class="metric-tile">
+                <span>输出形式</span>
+                <strong>简历 / 作品集 / 自我介绍</strong>
+              </article>
+            </section>
+
+            <div class="resume-grid">
+              <section class="resume-section">
+                <div class="section-head">
+                  <span></span>
+                  <h3>核心亮点</h3>
+                </div>
+                <ul id="previewHighlights" class="bullet-list"></ul>
+              </section>
+
+              <section class="resume-section">
+                <div class="section-head">
+                  <span></span>
+                  <h3>技能矩阵</h3>
+                </div>
+                <div id="previewSkills" class="skill-cloud"></div>
+              </section>
+
+              <section class="resume-section section-wide">
+                <div class="section-head">
+                  <span></span>
+                  <h3>工作经历</h3>
+                </div>
+                <div id="previewExperience" class="timeline-list"></div>
+              </section>
+
+              <section class="resume-section section-wide">
+                <div class="section-head">
+                  <span></span>
+                  <h3>项目经历</h3>
+                </div>
+                <div id="previewProjects" class="project-grid"></div>
+              </section>
+
+              <section class="resume-section section-wide">
+                <div class="section-head">
+                  <span></span>
+                  <h3>教育经历</h3>
+                </div>
+                <div id="previewEducation" class="education-list"></div>
+              </section>
+            </div>
+          </article>
+        </div>
+
+        <div id="history" class="history-shell panel glass-panel ghost-border">
+          <div class="panel-head">
+            <div>
+              <p class="panel-kicker">本地快照</p>
+              <h2>历史版本</h2>
+            </div>
+            <button id="clearHistoryBtn" class="pill-button tertiary-button" type="button">清空</button>
+          </div>
+          <div id="historyList" class="history-list"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
